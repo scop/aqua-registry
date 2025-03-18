@@ -114,6 +114,14 @@ packages:
           type: github_release
           asset: pulumi-{{trimV .Version}}-checksums.txt
           algorithm: sha256
+          cosign:
+            opts:
+              - --certificate-identity
+              - https://github.com/pulumi/pulumi/.github/workflows/sign.yml@refs/tags/{{.Version}}
+              - --certificate-oidc-issuer
+              - https://token.actions.githubusercontent.com
+              - --bundle
+              - https://github.com/pulumi/pulumi/releases/download/{{.Version}}/pulumi-{{trimV .Version}}-checksums.txt.sig
         overrides:
           - goos: windows
             format: zip
