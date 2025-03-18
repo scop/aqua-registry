@@ -45905,6 +45905,12 @@ packages:
         overrides:
           - goos: windows
             format: zip
+            files:
+              - name: pulumi
+                src: pulumi/bin/pulumi.exe
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
       - version_constraint: semver("<= 2.20.0")
         no_asset: true
       - version_constraint: semver("<= 2.22.0")
@@ -45920,6 +45926,9 @@ packages:
         supported_envs:
           - linux/amd64
           - darwin
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
       - version_constraint: semver("<= 3.2.1")
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -45932,6 +45941,9 @@ packages:
         supported_envs:
           - linux
           - darwin
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
       - version_constraint: semver("<= 3.39.3")
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -45945,6 +45957,12 @@ packages:
         overrides:
           - goos: windows
             format: zip
+            files:
+              - name: pulumi
+                src: pulumi/bin/pulumi.exe
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
       - version_constraint: semver("<= 3.49.0")
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -45957,6 +45975,12 @@ packages:
         overrides:
           - goos: windows
             format: zip
+            files:
+              - name: pulumi
+                src: pulumi/bin/pulumi.exe
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
       - version_constraint: "true"
         asset: pulumi-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -45969,6 +45993,12 @@ packages:
         overrides:
           - goos: windows
             format: zip
+            files:
+              - name: pulumi
+                src: pulumi/bin/pulumi.exe
+        files:
+          - name: pulumi
+            src: pulumi/pulumi
   - type: github_release
     repo_owner: pulumi
     repo_name: tf2pulumi
