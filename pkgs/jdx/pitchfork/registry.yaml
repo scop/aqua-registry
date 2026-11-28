@@ -24,6 +24,25 @@ packages:
         supported_envs:
           - linux
           - darwin/arm64
+      - version_constraint: semver("<= 2.24.1")
+        asset: pitchfork-{{.Arch}}-{{.OS}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+          arm64: aarch64
+          darwin: apple-darwin
+          linux: unknown-linux-gnu
+          windows: pc-windows-msvc
+        overrides:
+          - goos: darwin
+            replacements:
+              amd64: amd64
+          - goos: windows
+            format: zip
+        supported_envs:
+          - linux
+          - darwin/arm64
+          - windows
       - version_constraint: "true"
         asset: pitchfork-{{.Arch}}-{{.OS}}.{{.Format}}
         format: tar.gz
@@ -43,3 +62,5 @@ packages:
           - linux
           - darwin/arm64
           - windows
+        github_artifact_attestations:
+          signer_workflow: jdx/pitchfork/.github/workflows/release.yml

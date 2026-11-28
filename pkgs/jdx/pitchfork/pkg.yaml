@@ -1,4 +1,6 @@
 packages:
   - name: jdx/pitchfork@v2.36.0
   - name: jdx/pitchfork
+    version: v2.24.0
+  - name: jdx/pitchfork
     version: v0.1.3
