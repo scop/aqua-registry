@@ -109025,6 +109025,16 @@ packages:
       - name: deja
     version_constraint: "false"
     version_overrides:
+      - version_constraint: semver("< 0.12.0")
+        asset: deja-vu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        checksum:
+          type: github_release
+          asset: checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
       - version_constraint: semver("<= 0.21.4")
         asset: deja-vu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -109045,6 +109055,8 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        github_artifact_attestations:
+          signer_workflow: vshulcz/deja-vu/.github/workflows/release.yml
       - version_constraint: "true"
         asset: deja-vu_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -109064,6 +109076,8 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        github_artifact_attestations:
+          signer_workflow: vshulcz/deja-vu/.github/workflows/release.yml
   - type: github_release
     repo_owner: wader
     repo_name: fq
